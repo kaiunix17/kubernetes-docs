@@ -33,7 +33,7 @@ Quyida barcha komponentlarning qanday birgalikda ishlashi ko'rsatilgan:
   Cloudflare DNS (kyiv.uz)  <──  External DNS (avtomatik A-record yozadi)
          |
          v
-  DigitalOcean Server: 46.101.225.222
+  DigitalOcean Server: 46.101.225.221
          |
          v
   NGINX Ingress Controller  (port 80 / 443)
@@ -140,7 +140,7 @@ Ingress Controller — Kubernetes'da tashqi internetdan kelgan so'rovlarni to'g'
 
 ### Nimaga kerak?
 
-Bizda bitta server va bitta IP bor (`46.101.225.222`). Lekin bu IP orqali ko'plab domenlar ishlashi kerak. Masalan `argocd.kyiv.uz`, `app.kyiv.uz` va boshqalar — barchasi bitta IP orqali. NGINX Ingress qaysi so'rov qaysi domenga tegishli ekanini ajratib, to'g'ri joyga yo'naltiradi.
+Bizda bitta server va bitta IP bor (`46.101.225.221`). Lekin bu IP orqali ko'plab domenlar ishlashi kerak. Masalan `argocd.kyiv.uz`, `app.kyiv.uz` va boshqalar — barchasi bitta IP orqali. NGINX Ingress qaysi so'rov qaysi domenga tegishli ekanini ajratib, to'g'ri joyga yo'naltiradi.
 
 ### O'rnatish
 
@@ -173,7 +173,7 @@ kubectl get svc -n ingress-nginx
 
 # Natija:
 # NAME                       TYPE           EXTERNAL-IP      PORT(S)
-# ingress-nginx-controller   LoadBalancer   46.101.225.222   80:32702,443:31245
+# ingress-nginx-controller   LoadBalancer   46.101.225.221   80:32702,443:31245
 ```
 
 ---
@@ -301,7 +301,7 @@ helm install external-dns external-dns/external-dns \
 `argocd.kyiv.uz` Ingress yaratilganda External DNS avtomatik Cloudflare'ga A-record qo'shdi:
 
 ```
-action=CREATE  record=argocd.kyiv.uz  type=A  →  46.101.225.222
+action=CREATE  record=argocd.kyiv.uz  type=A  →  46.101.225.221
 ```
 
 ---
@@ -463,7 +463,7 @@ kubectl get certificate -n argocd
 nslookup argocd.kyiv.uz 8.8.8.8
 
 # Name:    argocd.kyiv.uz
-# Address: 46.101.225.222
+# Address: 46.101.225.221
 ```
 
 ### ArgoCD UI
@@ -485,5 +485,5 @@ Infratuzilma tayyor. Keyingi amaliyotlar:
 
 > **Eslatma:** DNS to'liq tarqalgunga qadar (1-2 soat) quyidagini ishlating:
 > ```bash
-> sudo sh -c 'echo "46.101.225.222 argocd.kyiv.uz" >> /etc/hosts'
+> sudo sh -c 'echo "46.101.225.221 argocd.kyiv.uz" >> /etc/hosts'
 > ```
