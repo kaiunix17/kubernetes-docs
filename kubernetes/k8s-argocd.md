@@ -3,7 +3,7 @@
 > **Stack:** K3s · Helm · NGINX Ingress · Cert-Manager · External DNS · ArgoCD  
 > **Server:** DigitalOcean | Ubuntu 24.04 | 2 vCPU / 4GB RAM  
 > **Domain:** kyiv.uz (Cloudflare)  
-> **IP:** 46.101.225.222
+> **IP:** 46.101.225.221
 
 ---
 
