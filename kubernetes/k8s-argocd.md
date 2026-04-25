@@ -54,7 +54,7 @@ Quyida barcha komponentlarning qanday birgalikda ishlashi ko'rsatilgan:
 | CPU | 2 vCPU |
 | RAM | 4 GB |
 | Disk | 80 GB SSD |
-| IP | 46.101.225.222 |
+| IP | 46.101.225.221 |
 | Domain | kyiv.uz (Cloudflare) |
 
 ---
